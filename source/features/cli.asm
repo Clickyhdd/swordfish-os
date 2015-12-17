@@ -62,7 +62,7 @@ get_cmd:				; Main processing loop
 	call os_string_compare
 	jc near clear_screen
 
-	mov di, dir_string		; 'DIR' entered?
+	mov di, dir_string		; 'LS' entered?
 	call os_string_compare
 	jc near list_directory
 
@@ -549,7 +549,7 @@ exit:
 	prompt			db '> ', 0
 
 
-	help_text_1		db 'Commands: DIR:Lists files in the directory, 13, 10, COPY:Copies file to target, REN:Renames the given file, DEL:Deletes given file, CAT:Prints given file to screen, SIZE:Displays size of given file, CLS:Clears screen, TIME:Displays current time, DATE:Displays current date, VER:Displays current version of this OS, EXIT:Exits command line', 13, 10
+	help_text_1		db 'Commands: LS:Lists files in the directory, 13, 10, COPY:Copies file to target, REN:Renames the given file, DEL:Deletes given file, CAT:Prints given file to screen, SIZE:Displays size of given file, CLS:Clears screen, TIME:Displays current time, DATE:Displays current date, VER:Displays current version of this OS, EXIT:Exits command line', 13, 10
 	help_text_2		db 'this is a test', 13, 10, 0
 	invalid_msg		db 'No such command or program', 13, 10, 0
 	nofilename_msg		db 'No filename or not enough filenames', 13, 10, 0
@@ -557,7 +557,7 @@ exit:
 	writefail_msg		db 'Could not write file. Write protected or invalid filename?', 13, 10, 0
 	exists_msg		db 'Target file already exists!', 13, 10, 0
 
-	version_msg		db 'MikeOS ', MIKEOS_VER, 13, 10, 0
+	version_msg		db 'SwordFish OS ', OS_VER, 13, 10, 0
 
 	exit_string		db 'EXIT', 0
 	help_string		db 'HELP', 0
