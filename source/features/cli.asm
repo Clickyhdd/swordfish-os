@@ -5,7 +5,6 @@ os_command_line:
 	mov si, version_msg
 	call os_print_string
 
-
 get_cmd:				; Main processing loop
 	mov di, input			; Clear input buffer each time
 	mov al, 0
@@ -228,7 +227,28 @@ no_kernel_allowed:
 ;TODO: If I make the screen print more then one line at a time
 print_help:
 	mov si, help_text_1
-	;mov si, help_text_2
+  call os_print_string
+	mov si, help_text_2
+	call os_print_string
+	mov si, help_text_3
+	call os_print_string
+  mov si, help_text_4
+	call os_print_string
+	mov si, help_text_5
+	call os_print_string
+	mov si, help_text_6
+	call os_print_string
+	mov si, help_text_7
+	call os_print_string
+	mov si, help_text_8
+	call os_print_string
+	mov si, help_text_9
+	call os_print_string
+  mov si, help_text_10
+	call os_print_string
+  mov si, help_text_11
+	call os_print_string
+	mov si, help_text_12
 	call os_print_string
 	jmp get_cmd
 
@@ -549,8 +569,18 @@ exit:
 	prompt			db '> ', 0
 
 
-	help_text_1		db 'Commands: LS:Lists files in the directory, 13, 10, COPY:Copies file to target, REN:Renames the given file, DEL:Deletes given file, CAT:Prints given file to screen, SIZE:Displays size of given file, CLS:Clears screen, TIME:Displays current time, DATE:Displays current date, VER:Displays current version of this OS, EXIT:Exits command line', 13, 10
-	help_text_2		db 'this is a test', 13, 10, 0
+	help_text_1		db 'Commands:', 13, 10,0
+	help_text_2		db 'LS:Lists files in the directory,', 13, 10, 0
+	help_text_3		db 'COPY:Copies file to target,', 13, 10, 0
+	help_text_4		db 'REN:Renames the given file,', 13, 10, 0
+	help_text_5		db 'DEL:Deletes given file,', 13, 10, 0
+	help_text_6		db 'CAT:Prints given file to screen,', 13, 10, 0
+	help_text_7		db 'SIZE:Displays size of given file,', 13, 10, 0
+	help_text_8		db 'CLS:Clears screen,', 13, 10, 0
+	help_text_9		db 'TIME:Displays current time,', 13, 10, 0
+	help_text_10	db 'DATE:Displays current date,', 13, 10, 0
+	help_text_11	db 'VER:Displays current version of this OS,', 13, 10, 0
+	help_text_12	db 'EXIT:Exits command line', 13, 10, 0
 	invalid_msg		db 'No such command or program', 13, 10, 0
 	nofilename_msg		db 'No filename or not enough filenames', 13, 10, 0
 	notfound_msg		db 'File not found', 13, 10, 0
