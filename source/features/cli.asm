@@ -1,4 +1,4 @@
-	; todo line:230 & 520
+
 os_command_line:
 	call os_clear_screen
 
@@ -51,7 +51,8 @@ get_cmd:				; Main processing loop
 
 	mov di, exit_string		; 'EXIT' entered?
 	call os_string_compare
-	jc near exit
+
+  jc near exit
 
 	mov di, help_string		; 'HELP' entered?
 	call os_string_compare
@@ -573,7 +574,7 @@ exit:
 	help_text_2		db 'LS:Lists files in the directory,', 13, 10, 0
 	help_text_3		db 'COPY:Copies file to target,', 13, 10, 0
 	help_text_4		db 'REN:Renames the given file,', 13, 10, 0
-	help_text_5		db 'DEL:Deletes given file,', 13, 10, 0
+	help_text_5		db 'RM:Deletes given file,', 13, 10, 0
 	help_text_6		db 'CAT:Prints given file to screen,', 13, 10, 0
 	help_text_7		db 'SIZE:Displays size of given file,', 13, 10, 0
 	help_text_8		db 'CLS:Clears screen,', 13, 10, 0
@@ -597,7 +598,7 @@ exit:
 	date_string		db 'DATE', 0
 	ver_string		db 'VER', 0
 	cat_string		db 'CAT', 0
-	del_string		db 'DEL', 0
+	del_string		db 'RM', 0
 	ren_string		db 'REN', 0
 	copy_string		db 'COPY', 0
 	size_string		db 'SIZE', 0
