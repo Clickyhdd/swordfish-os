@@ -1,6 +1,6 @@
 	BITS 16
 
-	%DEFINE OS_VER '1.1'	; OS version number
+	%DEFINE OS_VER '1.1.2'	; OS version number
 	%DEFINE OS_API_VER 16	; API version for programs to check
 
 
